@@ -1,5 +1,6 @@
 --Create a clothing store database
 CREATE TABLE clothes (id INTEGER PRIMARY KEY, name TEXT, size INTEGER, color TEXT, category TEXT, price REAL);
+
 --Insert 15 item values into the clothing table
 INSERT INTO clothes VALUES (1, "Hat", 2, "blue", "kids", 2.5);
 INSERT INTO clothes VALUES (2, "Hat", 1, "blue", "adult", 5);
@@ -16,10 +17,13 @@ INSERT INTO clothes VALUES (12, "pants", 10, "black", "adult", 40);
 INSERT INTO clothes VALUES (13, "pants", 6, "black", "adult", 30);
 INSERT INTO clothes VALUES (14, "dress", 6, "black", "adult", 50);
 INSERT INTO clothes VALUES (15, "dress", 8, "black", "adult", 45);
+
 --List all the items in the table ordered by price
 SELECT * FROM clothes ORDER BY price;
+
 --List the number of each categories
 SELECT category, COUNT(*) FROM clothes group by category;
+
 --Get which item is the most expensive
 SELECT name, MAX(price) FROM clothes;
 
